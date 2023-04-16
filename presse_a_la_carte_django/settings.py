@@ -71,14 +71,22 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'presse_a_la_carte_django.wsgi.application'
 
+STATIC_URL = "static/"
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'pressealacarte',
+        'USER': 'adminpresse',
+        'PASSWORD': '?;Deft78Dfgt4fg7rtgr',
+        'HOST': 'mysql-pressealacarte.mysql.database.azure.com',
+        'PORT': '3306',
+         'OPTIONS': {  
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
+        }
     }
 }
 
