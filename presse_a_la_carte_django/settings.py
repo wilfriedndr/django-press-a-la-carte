@@ -11,17 +11,19 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 import os
+import environ
 from pathlib import Path
+
+# Initialise environment variables
+env = environ.Env()
+environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
+SECRET_KEY = env('SECRET_KEY')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+e85^_k3yej7$t_pj0ykpf-3!_+z&7t(1zouu^vcworyov$dwe'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -79,10 +81,10 @@ STATIC_URL = "static/"
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pressealacarte',
-        'USER': 'adminpresse',
-        'PASSWORD': '?;Deft78Dfgt4fg7rtgr',
-        'HOST': 'mysql-pressealacarte.mysql.database.azure.com',
+        'NAME': env('DATABASE_NAME'),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
         'PORT': '3306',
          'OPTIONS': {  
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"  
