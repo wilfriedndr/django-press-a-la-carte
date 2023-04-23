@@ -17,8 +17,11 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv('SECRET_KEY')
 # Quick-start development settings - unsuitable for production
@@ -55,14 +58,21 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'presse_a_la_carte_django.urls'
 
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    STATIC_DIR
+]
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
-        ,
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.media',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -74,8 +84,9 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'presse_a_la_carte_django.wsgi.application'
 
-STATIC_URL = "static/"
+MEDIA_URL = "media/"
 
+MEDIA_ROOT = BASE_DIR / 'media'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
