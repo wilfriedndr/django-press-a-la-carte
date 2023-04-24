@@ -27,7 +27,7 @@
 				   
 				   <div class="flex flex-row">
 					 <!-- nav menu -->
-					 <ul class="navbar hidden xl:flex xl:flex-row text-gray-400 text-sm xl:text-lg items-center font-bold">
+					 <ul class="navbar hidden xl:flex xl:flex-row text-gray-200 text-sm xl:text-lg items-center font-bold">
 					   <li class="active relative border-l border-gray-800 hover:bg-gray-900">
 						 <a class="block py-3 px-6 border-b-2 border-transparent" href="./">Quotidiens régionaux</a>
 					   </li>
@@ -173,7 +173,7 @@
 			<!-- block news -->
 			<div class="bg-white">
 			  <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-				<div class="flex flex-row flex-wrap mt-4">
+				<div class="flex flex-row flex-wrap sm:mt-4 md:mt-8">
 				  <!-- Left -->
 				  <div class="flex-shrink max-w-full w-full lg:w-full overflow-hidden">
 					<div class="w-full pt-8 sm:pt-4">
@@ -379,33 +379,36 @@
 		  <!-- =========={ FOOTER }==========  -->
 		  <footer class="bg-black text-gray-400">
 			<!--Footer content-->
-			<div id="footer-content" class="relative pt-8 xl:pt-2 pb-6 xl:pb-2">
+			<div id="footer-content" class="relative pt-8 xl:pt-16 pb-6 xl:pb-12">
 			  <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
-				<div class="flex flex-wrap flex-row lg:justify-between items-center mx-3">
-				  <div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
-					<div class="flex items-center mb-2">
+				<div class="flex flex-wrap flex-row lg:justify-between -mx-3">
+				  <div class="flex-shrink max-w-full w-full w-12/12 lg:w-4/12 px-3 lg:pr-16">
+					<div class="flex items-center justify-center lg:justify-left mb-2">
 					  <span class="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">Presse à la carte</span>
 					  <!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
 					</div>
-					<p>Nous vous créons un journal personnalisé, à la rubrique.</p>
-					<ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
-					</ul>
-				  </div>
+					<div class="flex items-center justify-center lg:justify-left mb-2">
+						<span>Nous créons des journaux à la rubrique pour chaque abonné.</span>
 
-					<!--Start footer copyright-->
-					<div class="flex-shrink max-w-full w-full lg:w-2/5 px-3 lg:pr-16">
-						<div class="flex items-center mb-2">
-
-						<!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
-						<p>Copyright © Presse à la carte | Tous droits réservés.</p>
-						</div>
-						<ul class="space-x-3 mt-6 mb-6 Lg:mb-0">
-						</ul>
 					</div>
+				  </div>
+				  <div class="flex-shrink  my-auto max-w-full w-full text-center w-12/12 lg:w-4/12 px-3">
+					<p class="d-block my-3">Copyright © Presse à la carte | Tous droits réservés.</p>
+
+				  </div>
+				  <div class="flex-shrink  my-auto max-w-full w-full w-12/12 lg:w-4/12 px-3">
+					<div class="flex flex-wrap flex-row sm:justify-center lg:justify-end items-center text-center">
+					  <div class="flex-shrink max-w-full w-2/2 mb-6 lg:mb-0">
+						<h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Quoditiens régionaux</h4>
+						<h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Quotidiens nationaux</h4>
+						<h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Magazines</h4>
+						<h4 class="text-base leading-normal mb-3 uppercase text-gray-100">Enfants</h4>
+					  </div>
+					</div>
+				  </div>
 				</div>
+			  </div>
 			</div>
-			</div>
-		  </footer><!-- end footer -->
 		
 		  <!-- =========={ SCROLL TO TOP }==========  -->
 		  <a href="#" class="back-top fixed p-4 rounded bg-gray-100 border border-gray-100 text-gray-500 dark:bg-gray-900 dark:border-gray-800 right-4 bottom-4 hidden" aria-label="Scroll To Top">
