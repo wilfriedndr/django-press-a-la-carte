@@ -6,14 +6,14 @@ class Pdf(models.Model):
     """
     Create an abstract model for new files
     """
-    name = models.CharField(max_length="50", null=False)
-    path = models.CharField(max_length="250", null=False)
+    name = models.CharField(max_length=150, null=False)
+    path = models.CharField(max_length=250, null=False)
     created_at = models.DateTimeField(default=timezone.now)
 
 
 class NewFile(models.Model):
     subscriber = models.ForeignKey('Subscriber', on_delete=models.CASCADE)
-    pdf = models.ForeignKey(PDF, on_delete=models.CASCADE)
+    pdf = models.ForeignKey('Pdf', on_delete=models.CASCADE)
 
 
 class Subscriber(models.Model):
