@@ -1,4 +1,5 @@
 (function () {
+// import { getNodeEvents } from '../vendors/glightbox/src/js/utils/helpers';
   "use strict";
 
   /**
@@ -6,7 +7,6 @@
    * Functions
    * ------------------------------------------------------------------------
    */
-  
   // Back to top button
   const myBacktotop = function () {
     // browser window scroll 
@@ -298,6 +298,8 @@
   }
 
   // Custom JS
+    // insert your javascript in here
+
   const myCustom = function () {
     
     // insert your javascript in here

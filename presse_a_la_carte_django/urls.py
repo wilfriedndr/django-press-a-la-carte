@@ -21,8 +21,10 @@ from django.conf.urls.static import static
 from . import settings
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home_view, name='home'),
-]
+    path('^admin', admin.site.urls),
+    path('', views.index, name='home'),
+    path('login', views.login, name='login'),
+    path('subscription', views.subscription, name='subscription'),
+    path('register', views.register, name='register'),
+] 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
