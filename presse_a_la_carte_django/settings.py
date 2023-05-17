@@ -64,7 +64,6 @@ STATICFILES_DIRS = [
     STATIC_DIR
 ]
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -89,7 +88,7 @@ MEDIA_URL = "media/"
 MEDIA_ROOT = BASE_DIR / 'media'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
-
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -103,6 +102,13 @@ DATABASES = {
         }
     }
 }
+"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+                'NAME': BASE_DIR / 'db_sqlite3',
+    }
+}    
 
 
 # Password validation
@@ -147,3 +153,5 @@ TAILWIND_APP_NAME = 'theme'
 INTERNAL_IPS = [
     "127.0.0.1",
 ]
+
+AUTH_USER_MODEL = 'app.User'

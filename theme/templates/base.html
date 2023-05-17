@@ -18,36 +18,15 @@
 		{% tailwind_css %}
 	</head>
 
-	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
-		<header class="fixed top-0 left-0 right-0 z-50">
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal flex flex-col h-screen">
+		<header class="relative xl:fixed xl:right-0 xl:left-0 xl:top-0 z-50">
 			<nav class="bg-black py-0 sm:py-4">
 			   <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-				 <div class="flex justify-between">
+				 <div class="flex w-full justify-between">
 				   <div class="mx-w-10 text-2xl font-bold capitalize text-white flex items-center"><a href="./">Presse à la carte</a></div>
 				   
-				   <div class="flex flex-row">
-					 <!-- nav menu -->
-					 <ul class="navbar hidden xl:flex xl:flex-row text-gray-200 text-sm xl:text-lg items-center font-bold">
-					   <li class="active relative border-l border-gray-800 hover:bg-gray-900">
-						 <a class="block py-3 px-6 border-b-2 border-transparent" href="./">Quotidiens régionaux</a>
-					   </li>
-					   <li class="relative border-l border-gray-800 hover:bg-gray-900">
-						 <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Quotidiens nationaux</a>
-					   </li>
-					   <li class="relative border-l border-gray-800 hover:bg-gray-900">
-						 <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Magazines</a>
-					   </li>
-					   <li class="relative border-l border-gray-800 hover:bg-gray-900">
-						 <a class="block py-3 px-6 border-b-2 border-transparent" href="#">Enfants</a>
-					   </li>
-					   <li class="relative border-l border-gray-800 hover:bg-gray-900">
-						<a class="subscription block py-3 px-6 border-b-2 border-transparent" href="subscription">S'abonner</a>
-					  </li>
-					 </ul>
-				   </div>
-					<!-- mobile nav -->
-					<div class="flex flex-row items-center text-gray-300">
-					<div class="relative hover:bg-gray-800 block xl:hidden">
+				   <div class="flex flex-row justify-between">
+					<div class="text-gray-100 flex flex-shrink hover:bg-gray-300 block xl:hidden">
 						<button type="button" class="menu-mobile block py-3 px-6 border-b-2 border-transparent">
 						<span class="sr-only">Mobile menu</span>
 						<svg class="inline-block h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -55,9 +34,17 @@
 						</svg> Menu
 						</button>
 					</div>
-					<button class="hidden xl:flex items-center bg-gray-100 hover:bg-gray-400 text-gray-800 py-2 px-4 border border-gray-100">
-						<a class="block border-b-2 border-transparent" href="login">Se connecter</a>
-					  </button>
+					<!-- nav menu -->
+					<div class="flex">
+						<ul class="navbar hidden xl:flex xl:flex-row text-gray-200 text-sm xl:text-lg items-center font-bold">
+							<li class="relative border-l border-gray-800 hover:bg-gray-900">
+								<a class="subscription block py-3 px-6 border-b-2 border-transparent" href="subscription">S'abonner</a>
+							</li>
+							</ul>
+							<button class="hidden xl:flex items-center bg-gray-100 hover:bg-gray-400 text-gray-800 py-2 px-4 border border-gray-100">
+								<a class="block border-b-2 border-transparent" href="login">Se connecter</a>
+							  </button>
+					</div>
 					</div>
 				 </div>
 			   </div>
@@ -85,22 +72,6 @@
           <div class="text-center py-4 w-full font-bold border-b border-gray-100">Presse à la carte</div>
           <ul id="side-menu" class="w-full float-none flex flex-col">
             <li class="relative">
-              <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Quotidiens régionaux</a>
-            </li>
-
-            <li class="relative">
-              <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Quotidiens nationaux</a>
-            </li>
-
-            <li class="relative">
-              <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Magazines</a>
-            </li>
-
-            <li class="relative">
-              <a href="#" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Enfants</a>
-            </li>
-
-            <li class="relative">
               <a href="subscription" class="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">S'abonner</a>
             </li>
 
@@ -118,175 +89,69 @@
   </div><!-- End Mobile menu -->
 
 		  <!-- =========={ MAIN }==========  -->
-		  <main id="content" class="py-8 md:py-4">
+		  <main id="content">
 			
-			<div id="advertising" class="hidden md:block bg-white" style="margin-top: 70px">
+			<div id="advertising" class="hidden md:block bg-white">
                 <div class="relative w-full">
                 <img src="../../media/img/news/vacances.jpg" alt="ads" />
-					<h2 class="absolute text-gray-800 px-4 py-8 md:text-3xl lg:text-5xl 2xl:text-7xl font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
-						Toute l'information disponible à la rubrique</h2>
+					<h2 class="absolute text-gray-800 px-4 py-8 md:text-3xl lg:text-5xl font-bold top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center">
+						Abonnez-vous à la rubrique !</h2>
                 </div>
               </div>
 			<!-- block news -->
-			<div class="bg-white">
+			<div class="bg-white pt-3">
 			  <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-				<div class="flex flex-row flex-wrap sm:mt-4 md:mt-8">
-				  <!-- Left -->
+				<div class="flex flex-row flex-wrap">
 				  <div class="flex-shrink max-w-full w-full lg:w-full overflow-hidden">
-					<div class="w-full pt-8 sm:pt-4">
-						<h2 class="text-gray-800 text-2xl font-bold">
-							<span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Magazines
-						</h2>
-					</div>
 					<div class="flex flex-row flex-wrap -mx-3">
-					  <div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+					<!-- cote gauche-->
+					<div class="flex-shrink max-w-full w-full md:w-1/2 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img text-xl">
+							Plongez dans l'actualité captivante avec notre vente de journaux à la rubrique ! Restez informé(e) des dernières nouvelles, découvrez des reportages exclusifs et explorez les sujets qui vous passionnent.
+						</div>
 						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
 						  <a href="">
-							<img class="max-w-full w-full mx-auto" src="../../media/img/news/maison.png" alt="alt title">
+							<img class="w-1/4 mx-auto" src="../../media/img/news/maison.png" alt="alt title">
 						  </a>
-						  <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							  <a href="#">Mon chez moi</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">Lorem ipsum dolor sit amet consectetur</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Maison</a>
-						  </div>
+						  <div class="text-xl">Que vous soyez intéressé(e) par la politique, la culture, les sports ou les affaires, nos journaux vous offrent une expérience de lecture enrichissante et stimulante. Ne manquez pas cette occasion de vous tenir au courant et de vous connecter au monde qui vous entoure.</div>
 						</div>
+					  </div>				  
+					  <!-- cote droit-->
+					  <div class="max-w-full text-center md:w-1/2 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
+						<h3 class="text-3xl font-bold ">Le premier journal à la carte</h3>
+						<br />
+						<h4 class="text-2xl">Avec Presse à la Carte, nous vous proposons un journal qui vous ressemble</h4>
+						<h4 class="text-2xl"> à un prix défiant toute concurrence.</h4>
+						<br />
+						<h4 class="text-2xl">Vous ne payer que les articles qui vous intéressent</h4>
+						<br />
+						<ul class="justify-center flex flex-row text-gray-200 text-sm xl:text-lg items-center font-bold">
+							<li class="relative border-l border-gray-800 hover:bg-gray-300 bg-gray-900">
+								<a class="subscription block py-3 px-6 border-b-2 border-transparent" href="subscription">Je m'abonne</a>
+							</li>
+						</ul>
 					  </div>
-					  <div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../../media/img/news/sport.png" alt="alt title">
-						  </a>
-						  <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							  <a href="#">Tout le sport</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider additional content.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Sport</a>
-						  </div>
-						</div>
-					  </div>
-					  <div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../../media/img/news/cinema.png" alt="alt title">
-						  </a>
-						  <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							  <a href="#">5 Tips to Save Money Booking</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is to additional content.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Culture</a>
-						  </div>
-						</div>
-					  </div>
-					  <div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../../media/img/news/cinema2.png" alt="alt title">
-						  </a>
-						  <div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							  <a href="#">5 Tips to Save Money Booking </a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting ontent.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Cinema</a>
-						  </div>
-						</div>
-					  </div>
+
 					</div>
+
 				  </div>
+
 				</div>
+
 			  </div>
 			</div>
 
-		<!-- block news -->
-		<div class="bg-white">
-			<div class="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-				<div class="flex flex-row flex-wrap">
-				<!-- Left -->
-				<div class="flex-shrink max-w-full w-full overflow-hidden">
-					<div class="w-full py-3">
-					<h2 class="text-gray-800 text-2xl font-bold">
-						<span class="inline-block h-5 border-l-3 border-red-600 mr-2"></span>Enfants
-					</h2>
-					</div>
-					<div class="flex flex-row flex-wrap -mx-3">
-						<div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-							<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-								<a href="">
-						</a>
-						<div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-								<a href="">
-									<img class="max-w-full w-full mx-auto" src="../media/img/news/maison-enfant.png" alt="alt title">
-								</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with supporting.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Maison</a>
-						</div>
-						</div>
-					</div>
-					<div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../media/img/news/animaux.png" alt="alt title">
-						</a>
-						<div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							<a href="#">5 Tips to Save Money Booking</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is with supporting text below as ontent.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Animaux</a>
-						</div>
-						</div>
-					</div>
-					<div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../media/img/news/cinema-enfant.png" alt="alt title">
-						</a>
-						<div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							<a href="#">5 Tips to Save Money Booking</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with suppo content.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Cinema</a>
-						</div>
-						</div>
-					</div>
-					<div class="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
-						<div class="flex flew-wrap flex-col sm:flex-row sm:block hover-img">
-							<a href="">
-							<img class="max-w-full w-full mx-auto" src="../media/img/news/sport-enfant.png" alt="alt title">
-						</a>
-						<div class="py-0 sm:py-3 pl-3 sm:pl-0">
-							<h3 class="text-lg font-bold leading-tight mb-2">
-							<a href="#">5 Tips to Save Money Booking</a>
-							</h3>
-							<p class="hidden md:block text-gray-600 leading-tight mb-1">This is a wider card with additional content.</p>
-							<a class="text-gray-500" href="#"><span class="inline-block h-3 border-l-2 border-red-600 mr-2"></span>Sport</a>
-						</div>
-						</div>
-					</div>
-					</div>
-				</div>
-				</div>
-			</div>
-			</div>
 		  </main><!-- end main -->
 		
 		  <!-- =========={ FOOTER }==========  -->
-		  <footer class="bg-black text-gray-400">
+		  <footer class="bg-black text-gray-400 md:absolute md:left-0 md:right-0 md:bottom-0">
 			<!--Footer content-->
-			<div id="footer-content" class="relative pt-8 xl:pt-12 pb-6 xl:pb-12">
+			<div id="footer-content" class="relative pt-6 pb-6">
 			  <div class="xl:container mx-auto px-3 sm:px-4 xl:px-2 overflow-hidden">
 				<div class="flex flex-wrap flex-row lg:justify-between -mx-3">
 				  <div class="flex-shrink max-w-full w-full w-12/12 lg:w-5/12 px-3">
 					<div class="flex items-center justify-center lg:justify-left mb-2">
 					  <span class="text-3xl leading-normal mb-2 font-bold text-gray-100 mt-2">Presse à la carte</span>
-					  <!-- <img src="src/img-min/logo.png" alt="LOGO"> -->
 					</div>
 					<div class="flex items-center justify-center lg:justify-left mb-2">
 						<span>Nous créons des journaux à la rubrique pour chaque abonné.</span>
