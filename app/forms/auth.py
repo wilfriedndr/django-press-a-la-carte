@@ -16,7 +16,7 @@ def LoginForm(request):
         # Return an 'invalid login' error message.
         return "login unsuccessful"
 
-def RegisterForm(request):
+def RegistrationForm(request):
     username = request.POST["username"]
     password = request.POST["password"]
     email = request.POST["email"]
